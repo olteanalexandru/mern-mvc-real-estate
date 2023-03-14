@@ -23,16 +23,15 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const reportWebVitals = onPerfEntry => {
-    if (onPerfEntry && onPerfEntry instanceof Function) {
-        Promise.resolve().then(() => __importStar(require('web-vitals'))).then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-            getCLS(onPerfEntry);
-            getFID(onPerfEntry);
-            getFCP(onPerfEntry);
-            getLCP(onPerfEntry);
-            getTTFB(onPerfEntry);
-        });
-    }
+// @ts-nocheck
+const lodash_1 = require("lodash");
+const React = __importStar(require("react"));
+const react_bootstrap_1 = require("react-bootstrap");
+require("bootstrap/dist/css/bootstrap.min.css");
+const GridGenerator = ({ cols, children }) => {
+    const colWidth = 12 / cols;
+    const rows = (0, lodash_1.chunk)(React.Children.toArray(children), cols);
+    return (React.createElement(react_bootstrap_1.Container, { style: { color: "red" }, }, rows.map((cols) => (React.createElement(react_bootstrap_1.Row, null, cols.map((col) => (React.createElement(react_bootstrap_1.Col, { md: colWidth, className: "align-self-end" }, col))))))));
 };
-exports.default = reportWebVitals;
-//# sourceMappingURL=reportWebVitals.js.map
+exports.default = GridGenerator;
+//# sourceMappingURL=GridGen.jsx.map

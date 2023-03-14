@@ -37,12 +37,12 @@
     "react-toastify": "^9.0.0",
     "react-xml-parser": "^1.1.8",
     "reactstrap": "^9.0.2",
-    "typescript": "^4.6.4",
+    "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "--tsc run build",
+    "build": "-tsc run  build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
